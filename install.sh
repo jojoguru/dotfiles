@@ -86,7 +86,8 @@ for entry in "${FILES[@]}"; do
   fi
   install_file "$src" "$dst"
 done
-run chmod +x "$HOME/.claude/statusline-usage.sh" "$HOME/.claude/statusline-tokens.sh"
+run chmod +x "$HOME/.claude/statusline-usage.sh" "$HOME/.claude/statusline-tokens.sh" \
+  "$HOME/.claude/claude-usage-panel.sh"
 
 step "Platzhalter für Secret-Dateien"
 for f in "${SECRET_FILES[@]}"; do

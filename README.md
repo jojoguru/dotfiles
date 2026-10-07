@@ -16,8 +16,9 @@ cd ~/projects/atvantage/dotfiles
 ./install.sh
 ```
 
-`install.sh` kann man beliebig oft ausführen. Dateien, die schon identisch sind,
-bleiben unangetastet. Alles, was überschrieben wird, sichert das Skript vorher nach
+`install.sh` kann man beliebig oft ausführen. Zuerst installiert es alles aus
+dem `Brewfile`, auch die Apps. Was schon da ist, wird dabei nicht aktualisiert.
+Dateien, die schon identisch sind, bleiben unangetastet. Alles, was überschrieben wird, sichert das Skript vorher nach
 `~/.dotfiles-backup/<zeitstempel>/`. Die Darstellung von cmux (siehe unten) wird
 nur übernommen, wenn cmux nicht läuft. Sonst cmux beenden und
 `./install.sh --no-brew` noch einmal starten.
@@ -44,6 +45,25 @@ git push -u origin <thema> && gh pr create --base main
 
 Nach dem Merge: `git worktree remove ../dotfiles-<thema>`.
 
+## Homebrew
+
+Das `Brewfile` listet alle Homebrew-Pakete dieses Macs und wird von Hand
+gepflegt. Neue Pakete deshalb im Worktree eintragen und dann installieren:
+
+```sh
+brew bundle add --file Brewfile <name>          # Apps: --cask
+brew bundle install --no-upgrade --file Brewfile
+```
+
+`backup.sh` meldet, was installiert ist, aber nicht im Brewfile steht, und
+umgekehrt. Dabei gilt:
+
+- Kein `brew bundle dump` ins Repo. Das nimmt auch Bibliotheken auf, die nur
+  als Reste früherer Installationen herumliegen.
+- `brew bundle cleanup` deinstalliert alles, was nicht im Brewfile steht, auch
+  Apps. Ohne `--force` fragt es vorher, mit `--force` nicht. Deshalb nie in
+  ein Skript.
+
 ## Inhalt
 
 | Repo | System | Was |
@@ -60,7 +80,7 @@ Nach dem Merge: `git worktree remove ../dotfiles-<thema>`.
 | `claude/statusline-tokens.sh` | `~/.claude/statusline-tokens.sh` | Tokens der laufenden Session als Zeile in der Claude-Code-Statusline (`⛁ 81k out · 325k in · 17,7M cache · 89 calls · ctx 29%`), summiert aus dem Transkript inkl. Subagents; wird von `statusline-usage.sh` aufgerufen |
 | `claude/claude-usage-panel.sh` | `~/.claude/claude-usage-panel.sh` | Dock-Panel mit Balken für 5h/7d, Tempo-Marke, Reset-Countdown und Datenstand; liest nur den Cache der Statusline (Tasten `r`, `q`) |
 | `iterm2/omarchy-gruvbox.json` | iTerm2 DynamicProfiles | Altes iTerm-Profil, wird nur installiert, wenn iTerm2 vorhanden ist |
-| `Brewfile` | | cmux, Nerd Font, Starship, jq und die Tools, die `.zshrc` beim Start erwartet |
+| `Brewfile` | | Alle Homebrew-Pakete: Terminal-Setup, was `.zshrc`, `.zprofile`, `.aliases`, `.gitconfig` und die oh-my-zsh-Plugins voraussetzen, dazu CLI-Tools und Apps (siehe [Homebrew](#homebrew)) |
 
 oh-my-zsh sowie die Plugins `zsh-autosuggestions` und `watch` klont `install.sh` direkt von GitHub.
 

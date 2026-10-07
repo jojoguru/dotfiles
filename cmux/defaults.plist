@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AppleAccentColor</key>
+	<integer>-1</integer>
+	<key>AppleAquaColorVariant</key>
+	<integer>6</integer>
+	<key>appAccentColor</key>
+	<string>custom</string>
+	<key>appAccentColorCustomHex</key>
+	<string>#D8A657</string>
+	<key>appearanceMode</key>
+	<string>system</string>
+	<key>notificationPaneFlashColorHex</key>
+	<string>#D8A657</string>
+	<key>sidebarActiveTabIndicatorStyle</key>
+	<string>solidFill</string>
+	<key>sidebarAppearanceDefaultsVersion</key>
+	<integer>1</integer>
+	<key>sidebarBlendMode</key>
+	<string>withinWindow</string>
+	<key>sidebarBlurOpacity</key>
+	<real>1.0</real>
+	<key>sidebarCornerRadius</key>
+	<real>0.0</real>
+	<key>sidebarMaterial</key>
+	<string>sidebar</string>
+	<key>sidebarNotificationBadgeColorHex</key>
+	<string>#D8A657</string>
+	<key>sidebarPreset</key>
+	<string>nativeSidebar</string>
+	<key>sidebarSelectionColorHex</key>
+	<string>#504945</string>
+	<key>sidebarShowAgentUsage</key>
+	<false/>
+	<key>sidebarShowLog</key>
+	<true/>
+	<key>sidebarSubtleSelection</key>
+	<true/>
+	<key>sidebarTintHex</key>
+	<string>#000000</string>
+	<key>sidebarTintOpacity</key>
+	<real>0.18</real>
+	<key>workspaceTabColor.colors</key>
+	<dict>
+		<key>Aqua</key>
+		<string>#89B482</string>
+		<key>Blue</key>
+		<string>#7DAEA3</string>
+		<key>Brown</key>
+		<string>#70432E</string>
+		<key>Dark Aqua</key>
+		<string>#689D6A</string>
+		<key>Dark Blue</key>
+		<string>#458588</string>
+		<key>Dark Green</key>
+		<string>#98971A</string>
+		<key>Dark Orange</key>
+		<string>#D65D0E</string>
+		<key>Dark Purple</key>
+		<string>#B16286</string>
+		<key>Dark Red</key>
+		<string>#CC241D</string>
+		<key>Dark Yellow</key>
+		<string>#D79921</string>
+		<key>Gray</key>
+		<string>#928374</string>
+		<key>Green</key>
+		<string>#A9B665</string>
+		<key>Orange</key>
+		<string>#E1875C</string>
+		<key>Purple</key>
+		<string>#D3869B</string>
+		<key>Red</key>
+		<string>#EA6962</string>
+		<key>Yellow</key>
+		<string>#D8A657</string>
+	</dict>
+</dict>
+</plist>

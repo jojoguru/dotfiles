@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Blockiert Commits mit Tokens/Secrets. Aktiv nach:
+#   git config core.hooksPath .githooks   (macht install.sh)
+exec "$(git rev-parse --show-toplevel)/lib/secret-scan.sh" --staged

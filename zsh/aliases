@@ -1,0 +1,61 @@
+#-----------------#
+#      git        #
+#-----------------#
+alias gits='git status'
+alias gith='git hist'
+alias gitl='git log'
+alias gitlol='git log --oneline'
+alias gitf='git fetch --all'
+alias gitb='git branch --all'
+alias gitreopen='git reset --soft HEAD~1'
+alias gitr-auto='git rebase -i --autosquash'
+alias gitr-continue='git rebase --continue'
+alias gitr-abort='git rebase --abort'
+alias gitpurge='git remote prune origin && git branch --merged | grep -v "\*" | grep -v "master" | grep -v "develop" | grep -v "dev" | xargs -n 1 git branch -d'
+
+#-----------------#
+#     docker      #
+#-----------------#
+alias dc='docker-compose'
+alias dc-logs='docker-compose logs -f'
+alias docker-container-prune='docker container prune' # removes all container which does not run
+alias docker-images-clean='docker images | awk "{print $3}"|xargs docker rmi' # removes all images which have no container running
+alias docker-ps="docker ps --format 'table {{.Names}}\t{{.Image}}\t{{.Ports}}'"
+
+
+#-----------------#
+#    kubernets    #
+#-----------------#
+alias k='kubectl'
+alias kctx='kubectx'
+alias kns='kubens'
+
+
+#-----------------#
+#      misc       #
+#-----------------#
+alias zshconf='subl ~/.zsh-config.sublime-project'
+alias zshrc='subl ~/.zsh-config.sublime-project'
+alias bashconf='subl ~/.zsh-config.sublime-project'
+alias aliases='subl ~/.zsh-config.sublime-project'
+alias ll='ls -al'
+alias list-tcp-ports='sudo lsof -PiTCP -sTCP:LISTEN'
+alias syslog='less /var/log/system.log'
+alias initbash="source ~/.zshrc"
+alias phpv='php --version | head -n 1 | cut -c1-7'
+
+#-----------------#
+#    devtools     #
+#-----------------#
+alias dt81='docker run -it --rm -v $PWD:/app -v ~/.composer:/composer:delegated -v ~/.ssh/id_rsa:/root/.ssh/id_rsa:delegated brainbitsgmbh/php:8.1-devtools'
+alias dt82='docker run -it --rm -v $PWD:/app -v ~/.composer:/composer:delegated -v ~/.ssh/id_rsa:/root/.ssh/id_rsa:delegated brainbitsgmbh/php:8.2-devtools'
+alias dt83='docker run -it --rm -v $PWD:/app -v ~/.composer:/composer:delegated -v ~/.ssh/id_rsa:/root/.ssh/id_rsa:delegated brainbitsgmbh/php:8.3-devtools'
+
+
+#-----------------#
+#   Novitas CMS   #
+#-----------------#
+alias nov-clean-restart='bin/image/build && composer inst && bin/stack/rm && bin/stack/start && bin/stack/run/drush cim'
+
+alias novitas-graylog='ssh -NL 8443:127.0.0.1:9000 novitas-mgmt-graylog'
+alias graylog-novitas

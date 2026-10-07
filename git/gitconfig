@@ -1,0 +1,30 @@
+[core]
+	excludesFile = ~/.gitignore
+	autocrlf = input
+[user]
+	name = Jost Voelker
+	email = jost.voelker@brainbits.net
+[branch]
+	autosetuprebase = always
+[push]
+	default = simple
+	autoSetupRemote = true
+[remote "upstream"]
+	tagopt = --no-tags
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[alias]
+	hist = "log --all --format='[%C(cyan)%h%C(reset)] %C(red)%d%C(reset) %s%C(green)% (trailers:key=Issue,valueonly,separator=%x2C)%C(reset) %C(dim)# %an%C(reset)' --graph"
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main

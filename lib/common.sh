@@ -5,6 +5,7 @@
 FILES=(
   "cmux/cmux.json|$HOME/.config/cmux/cmux.json"
   "cmux/config.ghostty|$HOME/Library/Application Support/com.cmuxterm.app/config.ghostty"
+  "cmux/dock.json|$HOME/.config/cmux/dock.json"
   "starship/starship.toml|$HOME/.config/starship.toml"
   "zsh/zshrc|$HOME/.zshrc"
   "zsh/zprofile|$HOME/.zprofile"
@@ -14,6 +15,8 @@ FILES=(
   "git/gitconfig|$HOME/.gitconfig"
   "git/gitignore_global|$HOME/.gitignore"
   "claude/statusline-usage.sh|$HOME/.claude/statusline-usage.sh"
+  "claude/statusline-tokens.sh|$HOME/.claude/statusline-tokens.sh"
+  "claude/claude-usage-panel.sh|$HOME/.claude/claude-usage-panel.sh"
   "iterm2/omarchy-gruvbox.json|$HOME/Library/Application Support/iTerm2/DynamicProfiles/omarchy-gruvbox.json"
 )
 

@@ -583,8 +583,12 @@
       "Brown": "#70432E"
     },
     "notificationBadgeColor": "#D8A657",
-    // Aktiver Workspace nur mit Rahmen markieren, damit Pill-Farben sichtbar bleiben
-    "indicatorStyle": "border"
+    // Aktiver Workspace nur mit dünnem Rand markieren, damit Pill-Farben sichtbar bleiben.
+    // Intern gibt es nur leftRail/solidFill ("border" ist ein Alias für solidFill);
+    // eine eigene selectionColor erzwingt immer eine volle Fläche.
+    "indicatorStyle": "leftRail",
+    "subtleSelection": true,
+    "selectionColor": null
   },
   "notifications": {
     "paneFlashColor": "#D8A657"

@@ -1,0 +1,10 @@
+{
+  "controls": [
+    {
+      "id": "claude-usage",
+      "title": "Claude Usage",
+      "command": "/Users/jostvolker/.claude/claude-usage-panel.sh",
+      "height": 300
+    }
+  ]
+}

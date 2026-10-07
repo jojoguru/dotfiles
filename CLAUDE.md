@@ -4,13 +4,13 @@ macOS dotfiles: cmux, zsh, Starship, git, Claude statusline. Files are **copied*
 
 ## Workflow (mandatory)
 
-Never commit or push to `main`. Every change gets its own worktree, branch and PR against `main`:
+Never commit or push to `main`. Every change gets its own worktree, branch and PR against `main`. Worktrees live under `.claude/worktrees/` (gitignored); run these from the main checkout, not from inside another worktree:
 
 ```sh
-git fetch && git worktree add ../dotfiles-<topic> -b <topic> origin/main
-# work + commit inside ../dotfiles-<topic>
+git fetch && git worktree add .claude/worktrees/dotfiles-<topic> -b <topic> origin/main
+# work + commit inside .claude/worktrees/dotfiles-<topic>
 git push -u origin <topic> && gh pr create --base main
-git worktree remove ../dotfiles-<topic>   # after merge
+git worktree remove .claude/worktrees/dotfiles-<topic>   # after merge
 ```
 
 ## Sync

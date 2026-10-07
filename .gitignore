@@ -1,6 +1,9 @@
 .DS_Store
 __pycache__/
 
+# Worktrees für Änderungen (siehe CLAUDE.md)
+.claude/worktrees/
+
 # Secret-Dateien gehören nie ins Repo (siehe README, lib/secret-scan.sh)
 .brainbits
 brainbits

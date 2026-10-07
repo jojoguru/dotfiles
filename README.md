@@ -32,18 +32,20 @@ Danach:
 ## Änderungen sichern
 
 Nie direkt auf `main` committen. Jede Änderung bekommt einen eigenen Worktree,
-einen Branch und einen PR gegen `main`:
+einen Branch und einen PR gegen `main`. Die Worktrees liegen unter
+`.claude/worktrees/` (steht in der `.gitignore`). Angelegt werden sie aus dem
+Hauptverzeichnis des Repos, nicht aus einem anderen Worktree heraus:
 
 ```sh
-git fetch && git worktree add ../dotfiles-<thema> -b <thema> origin/main
-cd ../dotfiles-<thema>
+git fetch && git worktree add .claude/worktrees/dotfiles-<thema> -b <thema> origin/main
+cd .claude/worktrees/dotfiles-<thema>
 ./backup.sh     # System -> Repo, inkl. Secret-Scan
 git diff        # prüfen
 git commit -am "…"
 git push -u origin <thema> && gh pr create --base main
 ```
 
-Nach dem Merge: `git worktree remove ../dotfiles-<thema>`.
+Nach dem Merge im Hauptverzeichnis: `git worktree remove .claude/worktrees/dotfiles-<thema>`.
 
 ## Homebrew
 

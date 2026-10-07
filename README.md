@@ -30,11 +30,19 @@ Danach:
 
 ## Änderungen sichern
 
+Nie direkt auf `main` committen. Jede Änderung bekommt einen eigenen Worktree,
+einen Branch und einen PR gegen `main`:
+
 ```sh
+git fetch && git worktree add ../dotfiles-<thema> -b <thema> origin/main
+cd ../dotfiles-<thema>
 ./backup.sh     # System -> Repo, inkl. Secret-Scan
 git diff        # prüfen
-git commit -am "…" && git push
+git commit -am "…"
+git push -u origin <thema> && gh pr create --base main
 ```
+
+Nach dem Merge: `git worktree remove ../dotfiles-<thema>`.
 
 ## Inhalt
 

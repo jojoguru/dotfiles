@@ -86,7 +86,7 @@ for entry in "${FILES[@]}"; do
   fi
   install_file "$src" "$dst"
 done
-run chmod +x "$HOME/.claude/statusline-usage.sh"
+run chmod +x "$HOME/.claude/statusline-usage.sh" "$HOME/.claude/statusline-tokens.sh"
 
 step "Platzhalter für Secret-Dateien"
 for f in "${SECRET_FILES[@]}"; do
@@ -117,7 +117,7 @@ else
   say "übernommen: $CMUX_DEFAULTS"
 fi
 
-step "Claude-Code-Statusline (Usage-Pill in der cmux-Sidebar)"
+step "Claude-Code-Statusline (Usage-Pill in der cmux-Sidebar, Session-Tokens)"
 settings="$HOME/.claude/settings.json"
 script="$HOME/.claude/statusline-usage.sh"
 if ! command -v jq >/dev/null; then

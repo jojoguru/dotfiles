@@ -11,7 +11,8 @@
 #   statusline-usage.sh --clear   Pill im aktuellen Workspace entfernen (SessionEnd-Hook)
 #   statusline-usage.sh --show    zusammengeführten Stand ausgeben (zum Testen)
 #
-# Gibt bewusst nichts auf stdout aus: die Claude-Code-Statusline bleibt leer.
+# Die Zeile mit den Session-Tokens kommt aus statusline-tokens.sh; nur dessen
+# Ausgabe landet in der Claude-Code-Statusline.
 
 set -u
 
@@ -33,7 +34,12 @@ if [[ "${1:-}" == "--clear" ]]; then
   exit 0
 fi
 
-if [[ "${1:-}" == "--show" ]]; then input='{}'; else input="$(cat)"; fi
+if [[ "${1:-}" == "--show" ]]; then
+  input='{}'
+else
+  input="$(cat)"
+  "${BASH_SOURCE[0]%/*}/statusline-tokens.sh" <<<"$input"
+fi
 old="$(cat "$CACHE" 2>/dev/null)"
 
 # Zusammenführen: gleiches Fenster (resets_at ±10 min) → höherer Prozentwert,

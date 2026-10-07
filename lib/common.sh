@@ -14,6 +14,7 @@ FILES=(
   "git/gitconfig|$HOME/.gitconfig"
   "git/gitignore_global|$HOME/.gitignore"
   "claude/statusline-usage.sh|$HOME/.claude/statusline-usage.sh"
+  "claude/statusline-tokens.sh|$HOME/.claude/statusline-tokens.sh"
   "iterm2/omarchy-gruvbox.json|$HOME/Library/Application Support/iTerm2/DynamicProfiles/omarchy-gruvbox.json"
 )
 

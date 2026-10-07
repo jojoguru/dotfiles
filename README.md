@@ -1,8 +1,8 @@
 # dotfiles
 
 Terminal-Setup für macOS: cmux (Ghostty-basiert) im Omarchy-Gruvbox-Look, zsh mit
-oh-my-zsh, Starship-Prompt im Powerline-Stil und die Claude-Usage-Pill in der
-cmux-Sidebar.
+oh-my-zsh, Starship-Prompt im Powerline-Stil, die Claude-Usage-Pill in der
+cmux-Sidebar und die Session-Tokens in der Claude-Code-Statusline.
 
 ## Neuer Mac
 
@@ -47,6 +47,7 @@ git commit -am "…" && git push
 | `zsh/bash-config/*` | `~/.bash-config/.common`, `.godot` | Includes der `.zshrc` ohne Secrets |
 | `git/gitconfig`, `gitignore_global` | `~/.gitconfig`, `~/.gitignore` | Git-Defaults, Alias `git hist` |
 | `claude/statusline-usage.sh` | `~/.claude/statusline-usage.sh` | 5h/7d-Limits als Pill in der cmux-Sidebar; `install.sh` trägt dazu `statusLine` und einen SessionEnd-Hook in `~/.claude/settings.json` ein |
+| `claude/statusline-tokens.sh` | `~/.claude/statusline-tokens.sh` | Tokens der laufenden Session als Zeile in der Claude-Code-Statusline (`⛁ 81k out · 325k in · 17,7M cache · 89 calls · ctx 29%`), summiert aus dem Transkript inkl. Subagents; wird von `statusline-usage.sh` aufgerufen |
 | `iterm2/omarchy-gruvbox.json` | iTerm2 DynamicProfiles | Altes iTerm-Profil, wird nur installiert, wenn iTerm2 vorhanden ist |
 | `Brewfile` | | cmux, Nerd Font, Starship, jq und die Tools, die `.zshrc` beim Start erwartet |
 

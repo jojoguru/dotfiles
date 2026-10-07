@@ -67,7 +67,11 @@ elif ! command -v brew >/dev/null; then
   warn "Homebrew fehlt. Zuerst installieren (https://brew.sh), dann erneut starten."
   exit 1
 else
-  run brew bundle --file "$REPO/Brewfile"
+  # Nur Fehlendes installieren, nichts nebenbei aktualisieren. Scheitert ein
+  # Paket (z. B. deaktivierte Formel), trotzdem mit den Dateien weitermachen.
+  if ! run brew bundle install --no-upgrade --file "$REPO/Brewfile"; then
+    warn "Nicht alle Pakete aus dem Brewfile installiert (siehe oben), weiter ohne sie."
+  fi
 fi
 
 step "oh-my-zsh und Plugins"

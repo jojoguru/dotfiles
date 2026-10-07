@@ -15,7 +15,7 @@
 	<key>notificationPaneFlashColorHex</key>
 	<string>#D8A657</string>
 	<key>sidebarActiveTabIndicatorStyle</key>
-	<string>solidFill</string>
+	<string>leftRail</string>
 	<key>sidebarAppearanceDefaultsVersion</key>
 	<integer>1</integer>
 	<key>sidebarBlendMode</key>
@@ -30,10 +30,8 @@
 	<string>#D8A657</string>
 	<key>sidebarPreset</key>
 	<string>nativeSidebar</string>
-	<key>sidebarSelectionColorHex</key>
-	<string>#504945</string>
 	<key>sidebarShowAgentUsage</key>
-	<false/>
+	<true/>
 	<key>sidebarShowLog</key>
 	<true/>
 	<key>sidebarSubtleSelection</key>

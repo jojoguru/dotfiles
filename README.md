@@ -60,7 +60,7 @@ Nach dem Merge: `git worktree remove ../dotfiles-<thema>`.
 | `claude/statusline-tokens.sh` | `~/.claude/statusline-tokens.sh` | Tokens der laufenden Session als Zeile in der Claude-Code-Statusline (`⛁ 81k out · 325k in · 17,7M cache · 89 calls · ctx 29%`), summiert aus dem Transkript inkl. Subagents; wird von `statusline-usage.sh` aufgerufen |
 | `claude/claude-usage-panel.sh` | `~/.claude/claude-usage-panel.sh` | Dock-Panel mit Balken für 5h/7d, Tempo-Marke, Reset-Countdown und Datenstand; liest nur den Cache der Statusline (Tasten `r`, `q`) |
 | `iterm2/omarchy-gruvbox.json` | iTerm2 DynamicProfiles | Altes iTerm-Profil, wird nur installiert, wenn iTerm2 vorhanden ist |
-| `Brewfile` | | cmux, Nerd Font, Starship, jq und die Tools, die `.zshrc` beim Start erwartet |
+| `Brewfile` | | cmux, Nerd Font, Starship, Claude Code und alles, was `.zshrc`, `.zprofile`, `.aliases`, `.gitconfig` und die oh-my-zsh-Plugins voraussetzen |
 
 oh-my-zsh sowie die Plugins `zsh-autosuggestions` und `watch` klont `install.sh` direkt von GitHub.
 

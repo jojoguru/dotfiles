@@ -150,7 +150,6 @@ export LANG="en_US.UTF-8"
 # INCLUDES #
 . ~/.bash-config/.common
 . ~/.bash-config/.brainbits
-. ~/.bash-config/.tecsafe
 . ~/.bash-config/.godot
 
 autoload -U +X bashcompinit && bashcompinit

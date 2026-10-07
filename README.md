@@ -23,8 +23,8 @@ nur übernommen, wenn cmux nicht läuft. Sonst cmux beenden und
 
 Danach:
 
-1. Die Tokens in `~/.bash-config/.brainbits` und `~/.bash-config/.tecsafe`
-   eintragen (Passwort-Manager). Das Skript legt dort nur leere Platzhalter an.
+1. Die Tokens in `~/.bash-config/.brainbits` eintragen (Passwort-Manager).
+   Das Skript legt dort nur einen leeren Platzhalter an.
 2. `exec zsh`, cmux neu starten.
 
 ## Änderungen sichern
@@ -57,8 +57,8 @@ oh-my-zsh sowie die Plugins `zsh-autosuggestions` und `watch` klont `install.sh`
 Tokens gehören nicht in dieses Repo. Drei Sicherungen sorgen dafür:
 
 - **Whitelist:** Ins Repo kommt nur, was in `lib/common.sh` (`FILES`) und
-  `lib/cmux_defaults.py` (`KEYS`) steht. `~/.bash-config/.brainbits` und `.tecsafe`
-  enthalten Tokens und sind deshalb bewusst nicht dabei.
+  `lib/cmux_defaults.py` (`KEYS`) steht. `~/.bash-config/.brainbits` enthält
+  Tokens und ist deshalb bewusst nicht dabei.
 - **Scan:** `backup.sh` bricht ab, wenn `lib/secret-scan.sh` etwas findet
   (GitHub-/GitLab-/AWS-/Slack-Tokens, `sk-…`-Keys, Private Keys, Zuweisungen an
   `*_TOKEN`/`*_SECRET`/`*_PASSWORD`). Ausgegeben werden nur Datei und Zeile.

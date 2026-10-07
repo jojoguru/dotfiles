@@ -17,11 +17,10 @@ FILES=(
   "iterm2/omarchy-gruvbox.json|$HOME/Library/Application Support/iTerm2/DynamicProfiles/omarchy-gruvbox.json"
 )
 
-# Werden von der .zshrc gesourced, enthalten aber Tokens und bleiben deshalb
-# draußen. install.sh legt nur leere Platzhalter an, damit die Shell startet.
+# Wird von der .zshrc gesourced, enthält aber Tokens und bleibt deshalb
+# draußen. install.sh legt nur einen leeren Platzhalter an, damit die Shell startet.
 SECRET_FILES=(
   "$HOME/.bash-config/.brainbits"
-  "$HOME/.bash-config/.tecsafe"
 )
 
 CMUX_DEFAULTS="cmux/defaults.plist"

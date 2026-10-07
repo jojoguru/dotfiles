@@ -3,9 +3,7 @@ __pycache__/
 
 # Secret-Dateien gehören nie ins Repo (siehe README, lib/secret-scan.sh)
 .brainbits
-.tecsafe
 brainbits
-tecsafe
 .env*
 *.secret
 *.local

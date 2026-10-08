@@ -111,11 +111,25 @@ format = "([[](bg:alert fg:bar) $read_only [](bg:bar fg:alert)]($read_only
 # Längere Kontextnamen werden auf die ersten 4 und letzten 7 Zeichen gekürzt
 # (whe-iris-aks-staging → whe-…staging), damit die Umgebung am Ende lesbar
 # bleibt. Namen bis 14 Zeichen passen nicht aufs Muster und bleiben vollständig.
+# Kontexte mit "prod" im Namen werden rot. Die Pfeile holen ihre Farbe aus
+# $style, damit sie mit der Regel umgefärbt werden.
 [kubernetes]
 disabled = false
 symbol = "󱃾 "
 style = "bg:kube fg:text"
-format = "[[](bg:kube fg:bar) $symbol$context [](bg:bar fg:kube)]($style)"
+format = "[[]($style fg:bar) $symbol$context []($style fg:bar inverted)]($style)"
+
+# Es greift die erste passende Regel, deshalb stehen die Prod-Regeln vorne.
+# Prod mit "prod" in den letzten 7 Zeichen: gekürzt und rot.
+[[kubernetes.contexts]]
+context_pattern = "(.{4}).{4,}(prod.{3}|.prod.{2}|.{2}prod.|.{3}prod)"
+context_alias = "${1}…${2}"
+style = "bg:alert fg:text"
+
+# Übrige Prod-Kontexte: rot, aber ungekürzt, damit "prod" sichtbar bleibt.
+[[kubernetes.contexts]]
+context_pattern = ".*prod.*"
+style = "bg:alert fg:text"
 
 [[kubernetes.contexts]]
 context_pattern = "(.{4}).{4,}(.{7})"

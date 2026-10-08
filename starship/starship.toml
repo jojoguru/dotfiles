@@ -43,7 +43,6 @@ text  = "#282828" # background
 fg    = "#d4be98" # foreground
 host  = "#d3869b" # magenta
 user  = "#7daea3" # blue
-#git   = "#e1875c" # orange
 git   = "#a9b665" # green
 dir   = "#d8a657" # yellow
 ok    = "#a9b665" # green

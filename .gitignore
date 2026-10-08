@@ -10,3 +10,4 @@ brainbits
 .env*
 *.secret
 *.local
+.claude/worktrees/

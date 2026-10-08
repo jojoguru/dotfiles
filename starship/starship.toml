@@ -32,6 +32,7 @@ $git_branch\
 $git_commit\
 $git_status\
 $git_state\
+$kubernetes\
 $jobs\
 $battery\
 $cmd_duration\
@@ -45,6 +46,7 @@ host  = "#d3869b" # magenta
 user  = "#7daea3" # blue
 git   = "#a9b665" # green
 dir   = "#d8a657" # yellow
+kube  = "#89b482" # cyan
 ok    = "#a9b665" # green
 warning = "#e1875c" # orange
 alert = "#ea6962" # red
@@ -105,6 +107,19 @@ style = "bg:dir fg:text"
 read_only = ""
 read_only_style = "bg:alert fg:text"
 format = "([[](bg:alert fg:bar) $read_only [](bg:bar fg:alert)]($read_only_style))[[](bg:dir fg:bar) $path [](bg:bar fg:dir)]($style)"
+
+# Längere Kontextnamen werden auf die ersten 4 und letzten 7 Zeichen gekürzt
+# (whe-iris-aks-staging → whe-…staging), damit die Umgebung am Ende lesbar
+# bleibt. Namen bis 14 Zeichen passen nicht aufs Muster und bleiben vollständig.
+[kubernetes]
+disabled = false
+symbol = "󱃾 "
+style = "bg:kube fg:text"
+format = "[[](bg:kube fg:bar) $symbol$context [](bg:bar fg:kube)]($style)"
+
+[[kubernetes.contexts]]
+context_pattern = "(.{4}).{4,}(.{7})"
+context_alias = "${1}…${2}"
 
 [jobs]
 symbol = "jobs:"
